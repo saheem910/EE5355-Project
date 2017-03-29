@@ -160,11 +160,11 @@ classdef SymFunction
         function obj = setDescription(obj, str)
            
             if ischar(str)
-                obj.Description = string(str);
-            elseif isstring(str)
                 obj.Description = str;
+            elseif isstring(str)
+                obj.Description = char(str);
             elseif iscellstr(str)
-                obj.Description = string(str);
+                obj.Description = char(str);
             end
         end
         

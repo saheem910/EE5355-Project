@@ -1,6 +1,6 @@
 /*
  * Automatically Generated from Mathematica.
- * Wed 29 Mar 2017 13:56:58 GMT-05:00
+ * Wed 29 Mar 2017 17:56:58 GMT-04:00
  */
 
 #ifdef MATLAB_MEX_FILE
@@ -6724,7 +6724,7 @@ void mexFunction( int nlhs, mxArray *plhs[],
 
 #include "J_gravity_vec.hh"
 
-namespace symbolic
+namespace Kinematics
 {
 namespace basic
 {

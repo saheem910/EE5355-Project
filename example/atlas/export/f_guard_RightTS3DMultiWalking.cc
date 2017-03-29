@@ -1,6 +1,6 @@
 /*
  * Automatically Generated from Mathematica.
- * Wed 29 Mar 2017 13:57:41 GMT-05:00
+ * Wed 29 Mar 2017 17:57:28 GMT-04:00
  */
 
 #ifdef MATLAB_MEX_FILE
@@ -107,7 +107,7 @@ void mexFunction( int nlhs, mxArray *plhs[],
 
 #include "f_guard_RightTS3DMultiWalking.hh"
 
-namespace symbolic
+namespace Kinematics
 {
 namespace basic
 {

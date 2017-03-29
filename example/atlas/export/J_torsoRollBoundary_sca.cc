@@ -1,6 +1,6 @@
 /*
  * Automatically Generated from Mathematica.
- * Wed 29 Mar 2017 13:58:09 GMT-05:00
+ * Wed 29 Mar 2017 17:57:45 GMT-04:00
  */
 
 #ifdef MATLAB_MEX_FILE
@@ -108,7 +108,7 @@ void mexFunction( int nlhs, mxArray *plhs[],
 
 #include "J_torsoRollBoundary_sca.hh"
 
-namespace symbolic
+namespace Kinematics
 {
 namespace basic
 {

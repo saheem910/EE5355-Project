@@ -1,6 +1,6 @@
 /*
  * Automatically Generated from Mathematica.
- * Wed 29 Mar 2017 13:56:28 GMT-05:00
+ * Wed 29 Mar 2017 17:55:54 GMT-04:00
  */
 
 #ifdef MATLAB_MEX_FILE
@@ -934,7 +934,7 @@ void mexFunction( int nlhs, mxArray *plhs[],
 
 #include "Js_coriolis_vec_p3.hh"
 
-namespace symbolic
+namespace Kinematics
 {
 namespace basic
 {

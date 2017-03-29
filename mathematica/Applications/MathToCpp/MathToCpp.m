@@ -1,3 +1,5 @@
+(* ::Package:: *)
+
 (* Wolfram Language Package *)
 
 (* Created by the Wolfram Workbench Sep 18, 2016 *)
@@ -249,7 +251,7 @@ Options[CseWriteCpp]={ExportDirectory->".",
                       TemplateHeader->FileNameJoin[{DirectoryName[$InputFileName],"Template","template.hh"}],
                       Namespace->"symbolic",
                       Behavior->"basic",
-                      ExportHeaderFile->False,
+                      ExportHeaderFile->True,
                       ExportFull->True};
                       
                       

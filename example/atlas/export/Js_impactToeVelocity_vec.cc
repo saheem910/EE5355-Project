@@ -1,6 +1,6 @@
 /*
  * Automatically Generated from Mathematica.
- * Wed 29 Mar 2017 14:01:13 GMT-05:00
+ * Wed 29 Mar 2017 18:00:01 GMT-04:00
  */
 
 #ifdef MATLAB_MEX_FILE
@@ -216,7 +216,7 @@ void mexFunction( int nlhs, mxArray *plhs[],
 
 #include "Js_impactToeVelocity_vec.hh"
 
-namespace symbolic
+namespace Kinematics
 {
 namespace basic
 {

@@ -1,7 +1,7 @@
 %% The main script to run the ATLAS multi-contact walking optimization
 % 
 %
-
+atlas_init;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Specify project path
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -17,6 +17,16 @@ end
 urdf_file = fullfile(cur,'urdf','atlas_simple_contact_noback.urdf');
 atlas = Atlas(urdf_file);
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Compile and export model specific functions
+%%%% (uncomment the following lines when run it for the first time.)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+atlas.initialize();
+compileCoM(atlas);
+compileDynamics(atlas);
+exportCoM(atlas, export_path, true);
+exportDynamics(atlas, export_path, true);
+exportLineFunctions(atlas, export_path)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Hybrid system model for the multi-contact walking of ATLAS
@@ -24,6 +34,11 @@ atlas = Atlas(urdf_file);
 atlas_multiwalk = Atlas3DMultWalking(atlas);
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Compile and export behavior specific functions
+%%%% (uncomment the following lines when run it for the first time.)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+atlas_multiwalk = compile(atlas_multiwalk, atlas, export_path);
 
 
 
@@ -79,5 +94,7 @@ solver = IpoptApplication(atlas_multiwalk_opt);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Run animation of the optimal trajectory
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-anim = animator(atlas);
-anim.animate(calcs)
+
+export_file = fullfile(cur,'tmp','atlas_multi_contact_walking.avi');
+anim_obj = animator(atlas);
+anim_obj.animate(calcs, export_file);
